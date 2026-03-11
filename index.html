@@ -35,21 +35,34 @@
 
     <style>
         body {
+            /* ภาพพื้นหลัง และไล่สีขาวทับ (Overlay) แบบโปร่งแสง */
             background-color: #f8fafc;
-            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
-            background-size: 24px 24px;
+            background-image: 
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.4), rgba(248, 250, 252, 0.6)),
+                url('https://img2.imgbiz.com/imgbiz/E1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
         .glass-nav {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.45);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
         }
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.65);
+            box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 10px 15px -6px rgba(0, 0, 0, 0.05);
             border-color: #3b82f6;
         }
         /* Language Toggle Switch */
@@ -67,7 +80,7 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f1f1;
+            background: rgba(241, 241, 241, 0.5);
         }
         ::-webkit-scrollbar-thumb {
             background: #cbd5e1;
@@ -78,7 +91,7 @@
         }
     </style>
 </head>
-<body class="text-slate-800 antialiased min-h-screen flex flex-col">
+<body class="text-slate-800 antialiased min-h-screen flex flex-col relative">
 
     <nav class="glass-nav fixed w-full top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -87,99 +100,99 @@
                     <img src="https://img2.imgbiz.com/imgbiz/TPTH_logo.png" alt="Logo" class="h-10 w-auto" 
                          onerror="this.onerror=null; this.src='https://placehold.co/100x40?text=TPTH';">
                     <div class="hidden md:block border-l border-slate-300 h-6 mx-2"></div>
-                    <span class="hidden md:block text-lg font-semibold text-slate-700" data-i18n="nav_title">TAKAHATA PRECISION (THAILAND)</span>
+                    <span class="hidden md:block text-lg font-bold text-slate-800 tracking-wide" data-i18n="nav_title">TAKAHATA PRECISION (THAILAND)</span>
                 </div>
                 
-                <div class="flex bg-slate-100 rounded-lg p-1 border border-slate-200">
-                    <button onclick="setLanguage('th')" id="btn-th" class="lang-btn active px-3 py-1 rounded-md text-sm text-slate-600">TH</button>
-                    <button onclick="setLanguage('en')" id="btn-en" class="lang-btn px-3 py-1 rounded-md text-sm text-slate-600">EN</button>
+                <div class="flex bg-white/50 backdrop-blur-sm rounded-lg p-1 border border-slate-200 shadow-sm">
+                    <button onclick="setLanguage('th')" id="btn-th" class="lang-btn active px-3 py-1.5 rounded-md text-sm text-slate-700">TH</button>
+                    <button onclick="setLanguage('en')" id="btn-en" class="lang-btn px-3 py-1.5 rounded-md text-sm text-slate-700">EN</button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <main class="flex-grow pt-24 pb-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+    <main class="flex-grow pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative z-10">
         
-        <div class="text-center mb-10">
-            <h1 class="text-3xl sm:text-4xl font-bold text-slate-800 mb-2" data-i18n="hero_title">Systems and tools</h1>
-            <p class="text-slate-500 text-lg" data-i18n="hero_subtitle">ระบบงานและเครื่องมือสำหรับพนักงาน</p>
+        <div class="text-center mb-12">
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-3 drop-shadow-sm" data-i18n="hero_title">Systems and tools</h1>
+            <p class="text-slate-700 text-lg font-medium" data-i18n="hero_subtitle">ระบบงานและเครื่องมือสำหรับพนักงาน</p>
         </div>
 
-        <section class="mb-10">
-            <div class="flex items-center mb-5">
-                <div class="w-1 h-8 bg-teal-500 rounded-full mr-3"></div>
+        <section class="mb-12">
+            <div class="flex items-center mb-6">
+                <div class="w-1.5 h-8 bg-teal-500 rounded-full mr-3 shadow-sm"></div>
                 <h2 class="text-xl font-bold text-slate-800" data-i18n="sec_internal">ระบบภายใน (Internal Systems)</h2>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-                <a href="https://sites.google.com/view/tpthbookingmeetingroom?usp=sharing" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-start relative overflow-hidden">
+                <a href="https://sites.google.com/view/tpthbookingmeetingroom?usp=sharing" target="_blank" class="glass-card card-hover group rounded-2xl p-5 flex items-start relative overflow-hidden">
                     <div class="relative z-10">
-                        <div class="w-12 h-12 rounded-lg bg-green-100 flex items-center justify-center mb-4 text-green-600 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-calendar-check text-2xl"></i>
+                        <div class="w-12 h-12 rounded-xl bg-green-100/80 flex items-center justify-center mb-4 text-green-600 group-hover:scale-110 group-hover:bg-green-100 transition-all duration-300 shadow-sm">
+                            <i class="fas fa-calendar-check text-xl"></i>
                         </div>
-                        <h3 class="font-semibold text-slate-800 text-lg" data-i18n="title_booking">จองห้องประชุม</h3>
-                        <p class="text-slate-500 text-sm mt-1" data-i18n="desc_booking">ระบบจองห้องประชุมออนไลน์</p>
+                        <h3 class="font-bold text-slate-800 text-lg" data-i18n="title_booking">จองห้องประชุม</h3>
+                        <p class="text-slate-700 text-sm mt-1.5 font-medium" data-i18n="desc_booking">ระบบจองห้องประชุมออนไลน์</p>
                     </div>
                 </a>
 
-                <a href="https://script.google.com/macros/s/AKfycbxQR0yIy1Mpfq0eNjhFfR35S2erycNAhiTPzC6g2xbZ6zojos_2hz9dfKDwnjQrShzM/exec" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-start relative overflow-hidden">
+                <a href="https://script.google.com/macros/s/AKfycbxQR0yIy1Mpfq0eNjhFfR35S2erycNAhiTPzC6g2xbZ6zojos_2hz9dfKDwnjQrShzM/exec" target="_blank" class="glass-card card-hover group rounded-2xl p-5 flex items-start relative overflow-hidden">
                     <div class="relative z-10">
-                        <div class="w-12 h-12 rounded-lg bg-emerald-100 flex items-center justify-center mb-4 text-emerald-600 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-clipboard-list text-2xl"></i>
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100/80 flex items-center justify-center mb-4 text-emerald-600 group-hover:scale-110 group-hover:bg-emerald-100 transition-all duration-300 shadow-sm">
+                            <i class="fas fa-clipboard-list text-xl"></i>
                         </div>
-                        <h3 class="font-semibold text-slate-800 text-lg" data-i18n="title_work_record">ระบบบันทึกการทำงาน</h3>
-                        <p class="text-slate-500 text-sm mt-1" data-i18n="desc_work_record">บันทึกเวลาและข้อมูลการทำงาน</p>
+                        <h3 class="font-bold text-slate-800 text-lg" data-i18n="title_work_record">ระบบบันทึกการทำงาน</h3>
+                        <p class="text-slate-700 text-sm mt-1.5 font-medium" data-i18n="desc_work_record">บันทึกเวลาและข้อมูลการทำงาน</p>
                     </div>
                 </a>
 
-                <a href="https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Aec967b0024e8412aafb9056dc0184a4f%40thread.tacv2%2F1674703535849%3Fcontext%3D%257B%2522Tid%2522%3A%252236d85c6c-406a-464b-b63a-db5627c5db9a%2522%2C%2522Oid%2522%3A%252277d273e0-2fa9-4e51-9bde-998be96a8349%2522%257D%26anon%3Dtrue&type=meetup-join&deeplinkId=fcc0b78d-d724-49cf-91aa-c2bb40777f2d&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-start relative overflow-hidden">
+                <a href="https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Aec967b0024e8412aafb9056dc0184a4f%40thread.tacv2%2F1674703535849%3Fcontext%3D%257B%2522Tid%2522%3A%252236d85c6c-406a-464b-b63a-db5627c5db9a%2522%2C%2522Oid%2522%3A%252277d273e0-2fa9-4e51-9bde-998be96a8349%2522%257D%26anon%3Dtrue&type=meetup-join&deeplinkId=fcc0b78d-d724-49cf-91aa-c2bb40777f2d&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true" target="_blank" class="glass-card card-hover group rounded-2xl p-5 flex items-start relative overflow-hidden">
                     <div class="relative z-10">
-                        <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center mb-4 text-indigo-600 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-video text-2xl"></i>
+                        <div class="w-12 h-12 rounded-xl bg-indigo-100/80 flex items-center justify-center mb-4 text-indigo-600 group-hover:scale-110 group-hover:bg-indigo-100 transition-all duration-300 shadow-sm">
+                            <i class="fas fa-video text-xl"></i>
                         </div>
-                        <h3 class="font-semibold text-slate-800 text-lg" data-i18n="title_meeting">Meeting Room</h3>
-                        <p class="text-slate-500 text-sm mt-1" data-i18n="desc_meeting">เข้าร่วมประชุม Teams (คุณโม)</p>
+                        <h3 class="font-bold text-slate-800 text-lg" data-i18n="title_meeting">Meeting Room</h3>
+                        <p class="text-slate-700 text-sm mt-1.5 font-medium" data-i18n="desc_meeting">เข้าร่วมประชุม Teams (คุณโม)</p>
                     </div>
                 </a>
 
-                <a href="https://sites.google.com/view/tpthryphotoactivity" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-start relative overflow-hidden">
+                <a href="https://sites.google.com/view/tpthryphotoactivity" target="_blank" class="glass-card card-hover group rounded-2xl p-5 flex items-start relative overflow-hidden">
                     <div class="relative z-10">
-                        <div class="w-12 h-12 rounded-lg bg-pink-100 flex items-center justify-center mb-4 text-pink-600 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-camera text-2xl"></i>
+                        <div class="w-12 h-12 rounded-xl bg-pink-100/80 flex items-center justify-center mb-4 text-pink-600 group-hover:scale-110 group-hover:bg-pink-100 transition-all duration-300 shadow-sm">
+                            <i class="fas fa-camera text-xl"></i>
                         </div>
-                        <h3 class="font-semibold text-slate-800 text-lg" data-i18n="title_activity">บันทึกภาพกิจกรรมบริษัท</h3>
-                        <p class="text-slate-500 text-sm mt-1" data-i18n="desc_activity">อัลบั้มภาพกิจกรรมต่างๆ</p>
+                        <h3 class="font-bold text-slate-800 text-lg" data-i18n="title_activity">บันทึกภาพกิจกรรมบริษัท</h3>
+                        <p class="text-slate-700 text-sm mt-1.5 font-medium" data-i18n="desc_activity">อัลบั้มภาพกิจกรรมต่างๆ</p>
                     </div>
                 </a>
 
-                <a href="https://drive.google.com/file/d/1Je_fCyxGmW5kD5tqRe4_yQKw56y77eSw/view?usp=sharing" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-start relative overflow-hidden">
+                <a href="https://drive.google.com/file/d/1Je_fCyxGmW5kD5tqRe4_yQKw56y77eSw/view?usp=sharing" target="_blank" class="glass-card card-hover group rounded-2xl p-5 flex items-start relative overflow-hidden">
                     <div class="relative z-10">
-                        <div class="w-12 h-12 rounded-lg bg-purple-100 flex items-center justify-center mb-4 text-purple-600 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-book-open text-2xl"></i>
+                        <div class="w-12 h-12 rounded-xl bg-purple-100/80 flex items-center justify-center mb-4 text-purple-600 group-hover:scale-110 group-hover:bg-purple-100 transition-all duration-300 shadow-sm">
+                            <i class="fas fa-book-open text-xl"></i>
                         </div>
-                        <h3 class="font-semibold text-slate-800 text-lg" data-i18n="title_manual">คู่มือ Teams</h3>
-                        <p class="text-slate-500 text-sm mt-1" data-i18n="desc_manual">วิธีการใช้งานเบื้องต้น</p>
+                        <h3 class="font-bold text-slate-800 text-lg" data-i18n="title_manual">คู่มือ Teams</h3>
+                        <p class="text-slate-700 text-sm mt-1.5 font-medium" data-i18n="desc_manual">วิธีการใช้งานเบื้องต้น</p>
                     </div>
                 </a>
 
-                <a href="xxxxxxxx" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-start relative overflow-hidden">
+                <a href="xxxxxxxx" target="_blank" class="glass-card card-hover group rounded-2xl p-5 flex items-start relative overflow-hidden">
                     <div class="relative z-10">
-                        <div class="w-12 h-12 rounded-lg bg-blue-100 flex items-center justify-center mb-4 text-blue-600 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-car text-2xl"></i>
+                        <div class="w-12 h-12 rounded-xl bg-blue-100/80 flex items-center justify-center mb-4 text-blue-600 group-hover:scale-110 group-hover:bg-blue-100 transition-all duration-300 shadow-sm">
+                            <i class="fas fa-car text-xl"></i>
                         </div>
-                        <h3 class="font-semibold text-slate-800 text-lg" data-i18n="title_car_request">ระบบขอใช้รถบริษัท</h3>
-                        <p class="text-slate-500 text-sm mt-1" data-i18n="desc_car_request">จองและขอใช้รถส่วนกลาง</p>
+                        <h3 class="font-bold text-slate-800 text-lg" data-i18n="title_car_request">ระบบขอใช้รถบริษัท</h3>
+                        <p class="text-slate-700 text-sm mt-1.5 font-medium" data-i18n="desc_car_request">จองและขอใช้รถส่วนกลาง</p>
                     </div>
                 </a>
 
-                <a href="xxxxxxxx" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-5 shadow-sm flex items-start relative overflow-hidden">
+                <a href="xxxxxxxx" target="_blank" class="glass-card card-hover group rounded-2xl p-5 flex items-start relative overflow-hidden">
                     <div class="relative z-10">
-                        <div class="w-12 h-12 rounded-lg bg-orange-100 flex items-center justify-center mb-4 text-orange-600 group-hover:scale-110 transition-transform">
-                            <i class="fas fa-bus text-2xl"></i>
+                        <div class="w-12 h-12 rounded-xl bg-orange-100/80 flex items-center justify-center mb-4 text-orange-600 group-hover:scale-110 group-hover:bg-orange-100 transition-all duration-300 shadow-sm">
+                            <i class="fas fa-bus text-xl"></i>
                         </div>
-                        <h3 class="font-semibold text-slate-800 text-lg" data-i18n="title_bus_select">ระบบเลือกสายรถเลิกงาน</h3>
-                        <p class="text-slate-500 text-sm mt-1" data-i18n="desc_bus_select">ลงทะเบียนรถรับ-ส่งพนักงาน</p>
+                        <h3 class="font-bold text-slate-800 text-lg" data-i18n="title_bus_select">ระบบเลือกสายรถเลิกงาน</h3>
+                        <p class="text-slate-700 text-sm mt-1.5 font-medium" data-i18n="desc_bus_select">ลงทะเบียนรถรับ-ส่งพนักงาน</p>
                     </div>
                 </a>
 
@@ -187,64 +200,65 @@
         </section>
 
         <section>
-            <div class="flex items-center mb-5">
-                <div class="w-1 h-8 bg-purple-600 rounded-full mr-3"></div>
+            <div class="flex items-center mb-6">
+                <div class="w-1.5 h-8 bg-purple-600 rounded-full mr-3 shadow-sm"></div>
                 <h2 class="text-xl font-bold text-slate-800">AI Assistant & Tools</h2>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
-                <a href="https://www.google.com/" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-center">
-                    <div class="w-10 h-10 rounded-full bg-red-50 mx-auto mb-2 flex items-center justify-center text-red-600 group-hover:scale-110 transition-transform">
-                        <i class="fab fa-google"></i>
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                <a href="https://www.google.com/" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-red-50 flex items-center justify-center mb-3 text-red-600 group-hover:scale-110 transition-transform shadow-sm">
+                        <i class="fab fa-google text-lg"></i>
                     </div>
-                    <h3 class="font-semibold text-slate-700" data-i18n="title_search">ค้นหาด้วย Google</h3>
+                    <h3 class="font-bold text-slate-800 text-sm" data-i18n="title_search">ค้นหาด้วย Google</h3>
                 </a>
 
-                <a href="https://translate.google.co.th/" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-center">
-                    <div class="w-10 h-10 rounded-full bg-gray-100 mx-auto mb-2 flex items-center justify-center text-gray-600 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-language"></i>
+                <a href="https://translate.google.co.th/" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-slate-100 flex items-center justify-center mb-3 text-slate-600 group-hover:scale-110 transition-transform shadow-sm">
+                        <i class="fas fa-language text-lg"></i>
                     </div>
-                    <h3 class="font-semibold text-slate-700">Google Translate</h3>
+                    <h3 class="font-bold text-slate-800 text-sm">Google Translate</h3>
                 </a>
 
-                <a href="https://www.bing.com/translator?from=&to=th&setlang=th" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-center">
-                    <div class="w-10 h-10 rounded-full bg-cyan-50 mx-auto mb-2 flex items-center justify-center text-cyan-600 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-globe-asia"></i>
+                <a href="https://www.bing.com/translator?from=&to=th&setlang=th" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-cyan-50 flex items-center justify-center mb-3 text-cyan-600 group-hover:scale-110 transition-transform shadow-sm">
+                        <i class="fas fa-globe-asia text-lg"></i>
                     </div>
-                    <h3 class="font-semibold text-slate-700">Bing Translate</h3>
+                    <h3 class="font-bold text-slate-800 text-sm">Bing Translate</h3>
                 </a>
 
-                <a href="https://chatgpt.com/" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-center">
-                    <div class="w-10 h-10 rounded-full bg-teal-50 mx-auto mb-2 flex items-center justify-center text-teal-600 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-robot"></i>
+                <a href="https://chatgpt.com/" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-teal-50 flex items-center justify-center mb-3 text-teal-600 group-hover:scale-110 transition-transform shadow-sm">
+                        <i class="fas fa-robot text-lg"></i>
                     </div>
-                    <h3 class="font-semibold text-slate-700">ChatGPT</h3>
+                    <h3 class="font-bold text-slate-800 text-sm">ChatGPT</h3>
                 </a>
 
-                <a href="https://gemini.google.com/app?hl=th" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-center">
-                    <div class="w-10 h-10 rounded-full bg-blue-50 mx-auto mb-2 flex items-center justify-center text-blue-600 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-star"></i>
+                <a href="https://gemini.google.com/app?hl=th" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center mb-3 text-blue-600 group-hover:scale-110 transition-transform shadow-sm">
+                        <i class="fas fa-star text-lg"></i>
                     </div>
-                    <h3 class="font-semibold text-slate-700">Gemini</h3>
+                    <h3 class="font-bold text-slate-800 text-sm">Gemini</h3>
                 </a>
 
-                <a href="https://efiling.rd.go.th/rd-cms/" target="_blank" class="card-hover group bg-white rounded-xl border border-slate-200 p-4 shadow-sm text-center">
-                    <div class="w-10 h-10 rounded-full bg-green-50 mx-auto mb-2 flex items-center justify-center text-green-600 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-file-invoice-dollar"></i>
+                <a href="https://efiling.rd.go.th/rd-cms/" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex flex-col items-center justify-center text-center">
+                    <div class="w-12 h-12 rounded-full bg-green-50 flex items-center justify-center mb-3 text-green-600 group-hover:scale-110 transition-transform shadow-sm">
+                        <i class="fas fa-file-invoice-dollar text-lg"></i>
                     </div>
-                    <h3 class="font-semibold text-slate-700" data-i18n="title_tax">ยื่นภาษีออนไลน์</h3>
+                    <h3 class="font-bold text-slate-800 text-sm" data-i18n="title_tax">ยื่นภาษีออนไลน์</h3>
                 </a>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-white border-t border-slate-200 mt-auto">
-        <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-            <p class="text-center text-sm text-slate-500">
+    <!-- Footer แบบ Glassmorphism -->
+    <footer class="mt-auto relative z-10 glass-nav py-6 border-t-0 border-b-0 shadow-[0_-4px_30px_rgba(0,0,0,0.05)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-sm font-medium text-slate-700">
                 &copy; <span id="year"></span> Takahata Precision (Thailand) Co., Ltd. All rights reserved.
             </p>
-            <p class="text-center text-xs text-slate-400 mt-2 font-medium">
+            <p class="text-center text-xs text-slate-500 mt-2 font-medium">
                 @2026 Developed by Sittichai Yuenyao
             </p>
         </div>
