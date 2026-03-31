@@ -333,6 +333,17 @@
                     </div>
                 </a>
 
+                <!-- New Shortcut: Remove.bg -->
+                <a href="https://www.remove.bg/th" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex items-center gap-3 relative overflow-hidden">
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-fuchsia-50 flex items-center justify-center text-fuchsia-600 group-hover:scale-110 transition-transform shadow-sm relative z-10">
+                        <i class="fas fa-eraser text-xl"></i>
+                    </div>
+                    <div class="relative z-10 flex-1 min-w-0">
+                        <h3 class="font-bold text-slate-800 text-sm truncate" data-i18n="title_removebg">ลบพื้นหลังภาพ</h3>
+                        <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_removebg">Remove.bg ลบไวในคลิกเดียว</p>
+                    </div>
+                </a>
+
                 <a href="https://efiling.rd.go.th/rd-cms/" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex items-center gap-3 relative overflow-hidden">
                     <div class="w-12 h-12 shrink-0 rounded-xl bg-green-50 flex items-center justify-center text-green-600 group-hover:scale-110 transition-transform shadow-sm relative z-10">
                         <i class="fas fa-file-invoice-dollar text-xl"></i>
@@ -363,7 +374,7 @@
         // Set current year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Language Data (Updated directly from user)
+        // Language Data (Updated directly from user + Remove.bg)
         const translations = {
             th: {
                 nav_title: "ทาคาฮาตะ พริซิชั่น (ไทยแลนด์)",
@@ -401,7 +412,9 @@
                 title_qrcode: "สร้าง QR Code",
                 desc_qrcode: "สร้างคิวอาร์โค้ดฟรี",
                 title_emergency: "ระบบบันทึกข้อมูลฉุกเฉิน",
-                desc_emergency: "บันทึกข้อมูลติดต่อกรณีฉุกเฉิน"
+                desc_emergency: "บันทึกข้อมูลติดต่อกรณีฉุกเฉิน",
+                title_removebg: "ลบพื้นหลังภาพ",
+                desc_removebg: "Remove.bg ลบไวในคลิกเดียว"
             },
             en: {
                 nav_title: "Takahata Precision (THAILAND)",
@@ -439,7 +452,9 @@
                 title_qrcode: "QR Code Generator",
                 desc_qrcode: "Create free QR codes",
                 title_emergency: "Emergency Records",
-                desc_emergency: "Employee emergency contact info"
+                desc_emergency: "Employee emergency contact info",
+                title_removebg: "Remove Background",
+                desc_removebg: "Free Background Remover"
             }
         };
 
