@@ -111,39 +111,28 @@
 
     <main class="flex-grow pt-24 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full relative z-10">
         
-        <!-- Header Banner Section (New Design) -->
         <div class="w-full rounded-2xl sm:rounded-3xl overflow-hidden mb-12 relative shadow-xl bg-sky-800 mt-4 border border-white/50">
-            <!-- Background Image with Overlay -->
             <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://img2.imgbiz.com/imgbiz/IMG_20260113_E2.jpg');"></div>
-            <!-- Soft Blue Multiplier Overlay -->
             <div class="absolute inset-0 bg-sky-500/30 mix-blend-multiply"></div>
-            <!-- Gradient Overlay for better text readability -->
             <div class="absolute inset-0 bg-gradient-to-r from-sky-800/95 via-sky-700/80 to-transparent"></div>
 
-            <!-- Content -->
             <div class="relative z-10 p-6 sm:p-10 md:p-12 flex flex-col lg:flex-row items-center lg:items-center justify-between gap-8">
-                <!-- Left side: Logo & Text -->
                 <div class="flex flex-col sm:flex-row items-center sm:items-center gap-6 text-center sm:text-left">
-                    <!-- Logo Box -->
                     <div class="w-24 h-24 sm:w-28 sm:h-28 bg-white rounded-[1.25rem] shadow-xl flex items-center justify-center shrink-0 p-3">
                         <img src="https://img2.imgbiz.com/imgbiz/favicon.png" alt="TPTH Logo" class="max-w-full max-h-full object-contain drop-shadow-sm">
                     </div>
-                    <!-- Text -->
                     <div class="flex flex-col justify-center">
                         <h1 class="text-3xl sm:text-4xl md:text-[2.75rem] font-bold text-white drop-shadow-md tracking-tight mb-2" data-i18n="hero_title">Systems and tools</h1>
                         <p class="text-base sm:text-lg md:text-xl text-blue-50 drop-shadow-sm font-medium" data-i18n="hero_subtitle">ระบบงานและเครื่องมือสำหรับพนักงาน</p>
                     </div>
                 </div>
 
-                <!-- Right side: Date & Time Badge -->
                 <div class="shrink-0 lg:mt-0">
                     <div class="flex flex-col items-center sm:items-end gap-1.5 px-5 py-3.5 sm:px-6 sm:py-4 rounded-2xl border border-white/40 bg-white/10 backdrop-blur-md shadow-lg transition-all hover:bg-white/20">
-                        <!-- Date -->
                         <div class="flex items-center gap-2 text-white/90">
                             <i class="far fa-calendar-alt text-sm"></i>
                             <span id="current-date-display" class="text-xs sm:text-sm font-medium tracking-wide">...</span>
                         </div>
-                        <!-- Time -->
                         <div class="flex items-center gap-2">
                             <i class="far fa-clock text-base text-sky-200"></i>
                             <span id="current-time-display" class="text-xl sm:text-2xl font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-white to-sky-200 font-mono drop-shadow-sm">00:00:00</span>
@@ -153,7 +142,6 @@
             </div>
         </div>
 
-        <!-- Section 1: ระบบภายใน (Internal Systems) -->
         <section class="mb-12">
             <div class="flex items-center mb-6">
                 <div class="w-1.5 h-8 bg-teal-500 rounded-full mr-3 shadow-sm"></div>
@@ -255,7 +243,6 @@
             </div>
         </section>
 
-        <!-- Section 2: AI Assistant & Tools -->
         <section>
             <div class="flex items-center mb-6">
                 <div class="w-1.5 h-8 bg-purple-600 rounded-full mr-3 shadow-sm"></div>
@@ -333,7 +320,6 @@
                     </div>
                 </a>
 
-                <!-- New Shortcut: Remove.bg -->
                 <a href="https://www.remove.bg/th" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex items-center gap-3 relative overflow-hidden">
                     <div class="w-12 h-12 shrink-0 rounded-xl bg-fuchsia-50 flex items-center justify-center text-fuchsia-600 group-hover:scale-110 transition-transform shadow-sm relative z-10">
                         <i class="fas fa-eraser text-xl"></i>
@@ -353,12 +339,21 @@
                         <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_tax">กรมสรรพากร</p>
                     </div>
                 </a>
+
+                <a href="https://bigimage.11zon.com/th/crop-circle-image/" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex items-center gap-3 relative overflow-hidden">
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-orange-50 flex items-center justify-center text-orange-600 group-hover:scale-110 transition-transform shadow-sm relative z-10">
+                        <i class="fas fa-crop-simple text-xl"></i>
+                    </div>
+                    <div class="relative z-10 flex-1 min-w-0">
+                        <h3 class="font-bold text-slate-800 text-sm truncate" data-i18n="title_cropcircle">ครอบตัดภาพวงกลม</h3>
+                        <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_cropcircle">ครอบตัดภาพวงกลมออนไลน์</p>
+                    </div>
+                </a>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer แบบ Glassmorphism -->
     <footer class="mt-auto relative z-10 glass-nav py-6 border-t-0 border-b-0 shadow-[0_-4px_30px_rgba(0,0,0,0.05)]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p class="text-center text-sm font-medium text-slate-500">
@@ -374,7 +369,7 @@
         // Set current year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Language Data (Updated directly from user + Remove.bg)
+        // Language Data (Updated directly from user + Remove.bg + Crop Circle)
         const translations = {
             th: {
                 nav_title: "ทาคาฮาตะ พริซิชั่น (ไทยแลนด์)",
@@ -414,7 +409,9 @@
                 title_emergency: "ระบบบันทึกข้อมูลฉุกเฉิน",
                 desc_emergency: "บันทึกข้อมูลติดต่อกรณีฉุกเฉิน",
                 title_removebg: "ลบพื้นหลังภาพ",
-                desc_removebg: "Remove.bg ลบไวในคลิกเดียว"
+                desc_removebg: "Remove.bg ลบไวในคลิกเดียว",
+                title_cropcircle: "ครอบตัดภาพวงกลม",
+                desc_cropcircle: "ครอบตัดภาพวงกลมออนไลน์"
             },
             en: {
                 nav_title: "Takahata Precision (THAILAND)",
@@ -454,7 +451,9 @@
                 title_emergency: "Emergency Records",
                 desc_emergency: "Employee emergency contact info",
                 title_removebg: "Remove Background",
-                desc_removebg: "Free Background Remover"
+                desc_removebg: "Free Background Remover",
+                title_cropcircle: "Crop Circle Image",
+                desc_cropcircle: "Online circle image cropper"
             }
         };
 
