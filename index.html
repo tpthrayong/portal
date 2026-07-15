@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- เปลี่ยน Font เป็น Sarabun -->
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="https://img2.imgbiz.com/imgbiz/favicon.png" type="image/png">
     
     <script>
@@ -16,7 +17,7 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Prompt', 'sans-serif'],
+                        sans: ['Sarabun', 'sans-serif'], // เปลี่ยนจาก Prompt เป็น Sarabun
                     },
                     colors: {
                         brand: {
@@ -35,7 +36,7 @@
 
     <style>
         body {
-            font-family: 'Prompt', sans-serif;
+            font-family: 'Sarabun', sans-serif; /* เปลี่ยนจาก Prompt เป็น Sarabun */
             background-color: #f0f9ff;
             background-image: linear-gradient(135deg, #e0f2fe 0%, #ffffff 50%, #f0f9ff 100%);
             background-size: cover;
@@ -158,7 +159,6 @@
                     </div>
                 </a>
 
-                <!-- ระบบขออนุญาตเข้าพื้นที่บริษัท (เพิ่มเข้ามาใหม่) -->
                 <a href="https://sites.google.com/view/tpthvisitoraccess" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex items-center gap-3 relative overflow-hidden">
                     <div class="w-12 h-12 shrink-0 rounded-xl bg-cyan-100/80 flex items-center justify-center text-cyan-600 group-hover:scale-110 group-hover:bg-cyan-100 transition-all duration-300 shadow-sm relative z-10">
                         <i class="fas fa-id-badge text-xl"></i>
@@ -209,13 +209,24 @@
                     </div>
                 </a>
 
-                <a href="xxxxx" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex items-center gap-3 relative overflow-hidden">
+                <a href="https://sites.google.com/view/takahatavehiclerequest/" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex items-center gap-3 relative overflow-hidden">
                     <div class="w-12 h-12 shrink-0 rounded-xl bg-blue-100/80 flex items-center justify-center text-blue-600 group-hover:scale-110 group-hover:bg-blue-100 transition-all duration-300 shadow-sm relative z-10">
                         <i class="fas fa-car text-xl"></i>
                     </div>
                     <div class="relative z-10 flex-1 min-w-0">
                         <h3 class="font-bold text-slate-800 text-sm truncate" data-i18n="title_car_request">ระบบขอใช้รถบริษัท</h3>
                         <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_car_request">จองและขอใช้รถส่วนกลาง</p>
+                    </div>
+                </a>
+
+                <!-- เพิ่มระบบสำรวจความพึงพอใจการใช้บริการรถบริษัท -->
+                <a href="https://sites.google.com/view/tpthcompanyvehiclesurvay" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex items-center gap-3 relative overflow-hidden">
+                    <div class="w-12 h-12 shrink-0 rounded-xl bg-lime-100/80 flex items-center justify-center text-lime-600 group-hover:scale-110 group-hover:bg-lime-100 transition-all duration-300 shadow-sm relative z-10">
+                        <i class="fas fa-star-half-stroke text-xl"></i>
+                    </div>
+                    <div class="relative z-10 flex-1 min-w-0">
+                        <h3 class="font-bold text-slate-800 text-sm truncate" data-i18n="title_car_survey">ประเมินการใช้รถบริษัท</h3>
+                        <p class="text-slate-600 text-xs mt-0.5 font-medium truncate" data-i18n="desc_car_survey">สำรวจความพึงพอใจการบริการ</p>
                     </div>
                 </a>
 
@@ -249,7 +260,6 @@
                     </div>
                 </a>
 
-                <!-- บันทึกภาพกิจกรรมบริษัท (ย้ายมาไว้ท้ายสุด) -->
                 <a href="https://sites.google.com/view/tpthryphotoactivity" target="_blank" class="glass-card card-hover group rounded-2xl p-4 flex items-center gap-3 relative overflow-hidden">
                     <div class="w-12 h-12 shrink-0 rounded-xl bg-pink-100/80 flex items-center justify-center text-pink-600 group-hover:scale-110 group-hover:bg-pink-100 transition-all duration-300 shadow-sm relative z-10">
                         <i class="fas fa-camera text-xl"></i>
@@ -398,12 +408,14 @@
                 desc_work_record: "บันทึกเวลาและข้อมูลการทำงาน",
                 title_car_request: "ระบบขอใช้รถบริษัท",
                 desc_car_request: "จองและขอใช้รถส่วนกลาง",
+                title_car_survey: "ประเมินการใช้รถบริษัท", // เพิ่มคีย์แปลภาษาสำหรับระบบใหม่
+                desc_car_survey: "สำรวจความพึงพอใจการบริการ", // เพิ่มคีย์แปลภาษาสำหรับระบบใหม่
                 title_bus_select: "ระบบเลือกสายรถเลิกงาน",
                 desc_bus_select: "ลงทะเบียนรถรับ-ส่งพนักงาน",
                 title_booking: "จองห้องประชุม",
                 desc_booking: "ระบบจองห้องประชุมออนไลน์",
-                title_visitor: "ระบบขออนุญาตเข้าพื้นที่บริษัท", // เพิ่มคีย์แปลภาษา TH
-                desc_visitor: "ฟอร์มขออนุญาตเข้าโรงงาน", // เพิ่มคีย์แปลภาษา TH
+                title_visitor: "ระบบขออนุญาตเข้าพื้นที่บริษัท",
+                desc_visitor: "ฟอร์มขออนุญาตเข้าโรงงาน",
                 title_canteen_survey: "สำรวจความพึงพอใจโรงอาหาร",
                 desc_canteen_survey: "ประเมินคุณภาพอาหารและการบริการ",
                 title_activity: "บันทึกภาพกิจกรรมบริษัท",
@@ -444,12 +456,14 @@
                 desc_work_record: "Time and work tracking",
                 title_car_request: "Company Car Request",
                 desc_car_request: "Book pool vehicles",
+                title_car_survey: "Car Service Survey", // เพิ่มคีย์แปลภาษา EN สำหรับระบบใหม่
+                desc_car_survey: "Vehicle service satisfaction", // เพิ่มคีย์แปลภาษา EN สำหรับระบบใหม่
                 title_bus_select: "Bus Line Selection",
                 desc_bus_select: "Register for shuttle bus",
                 title_booking: "Meeting Room Booking",
                 desc_booking: "Online Booking System",
-                title_visitor: "Visitor Access System", // เพิ่มคีย์แปลภาษา EN
-                desc_visitor: "Factory/Area visitor request form", // เพิ่มคีย์แปลภาษา EN
+                title_visitor: "Visitor Access System",
+                desc_visitor: "Factory/Area visitor request form",
                 title_canteen_survey: "Canteen Satisfaction Survey",
                 desc_canteen_survey: "Quality and service evaluation",
                 title_activity: "Company Activity Photos",
